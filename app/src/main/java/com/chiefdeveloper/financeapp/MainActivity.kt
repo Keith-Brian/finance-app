@@ -3,13 +3,17 @@ package com.chiefdeveloper.financeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.chiefdeveloper.financeapp.ui.theme.FinanceAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +26,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   CardRow()
+                   Column {
+
+                       WalletSection()
+                       Spacer(modifier = Modifier.height(10.dp))
+                       CardRow()
+
+                   }
                 }
             }
         }
@@ -35,6 +45,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     FinanceAppTheme {
-       CardRow()
+        Column {
+
+            WalletSection()
+            Spacer(modifier = Modifier.height(10.dp))
+            CardRow()
+
+        }
     }
 }
